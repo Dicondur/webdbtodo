@@ -1,5 +1,5 @@
-# webdbtodo
-minimalist webdb todo app with angular
+# webdbcontacts
+minimalist webdb contacts app with angular
 
 to run type:
 
