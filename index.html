@@ -5,21 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todos</title>
+    <title>Contacts</title>
     <script src="js/angular.js"></script>
     <script src="js/uuid.js"></script>
     <script src="js/index.js"></script>
+
+    <script src="js/index.js"></script>
 </head>
 
+<style>
+        input.ng-invalid {
+            background-color:pink;
+        }
+        input.ng-valid {
+            background-color:lightgreen;
+        }
+        </style>
+
+
+
+
 <body>
-    <form ng-app="myApp" ng-controller="myCtrl" ng-submit="addTodo()">
-        <h2>Todos</h2>
-        <div class="row" ng-repeat="todo in model.todos">
-            {{todo.name}}
-            <button type="button" ng-click="deleteTodo(todo.ID)">-</button>
+    <form ng-app="myApp" ng-controller="myCtrl" ng-submit="addContact()">
+        <h2> <strong>Contacts</strong></h2>
+        <div class="row" ng-repeat="contact in model.contacts">
+            {{contact.name}}
+            <strong>{{contact.email}}</strong>
+            {{contact.phone}}
+            <button type="button" ng-click="deleteContact(contact.ID)">-</button>
         </div>
-        <div class="pull-right">
-            <input placeholder="add todo" ng-model="todo_to_add" />
+        <div class="pull-left">
+    
+            <input placeholder="add a contact name" ng-model="name_to_add" required/>
+            <input placeholder="email" ng-model="email_to_add" type="email" required/>
+            
+            <input placeholder="phone" ng-model="phone_to_add" />
             <button type="submit">+</button>
         </div>
     </form>
