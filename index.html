@@ -10,7 +10,12 @@
     <script src="js/uuid.js"></script>
     <script src="js/index.js"></script>
 
-    <script src="js/index.js"></script>
+    <!-- <script src="lib/materialize/dist/js/materialize.min.js"></script> -->
+    <!-- Compiled and minified JavaScript -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    
+
 </head>
 
 <style>
@@ -27,13 +32,16 @@
 
 <body>
     <form ng-app="myApp" ng-controller="myCtrl" ng-submit="addContact()">
+           
         <h2> <strong>Contacts</strong></h2>
+        <ul class="collection">
         <div class="row" ng-repeat="contact in model.contacts">
             {{contact.name}}
             <strong>{{contact.email}}</strong>
             {{contact.phone}}
             <button type="button" ng-click="deleteContact(contact.ID)">-</button>
         </div>
+        </ul>
         <div class="pull-left">
     
             <input placeholder="add a contact name" ng-model="name_to_add" required/>
